@@ -64,7 +64,7 @@ def get_pools():
 
 def get_default_pool():
     """Return the primary ZFS pool configured in the system"""
-    return get_pools()[0]
+    return os.environ.get('ZFS_POOL', get_pools()[0])
 
 @pass_zfs_pool
 def get_datasets(zpool=None, strip_poolname=True):
