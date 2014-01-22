@@ -1,5 +1,3 @@
-#! /usr/bin/env python
-
 #
 # Copyright (c) 2010, Mij <mij@sshguard.net>
 # All rights reserved.
@@ -244,7 +242,7 @@ def _list_context(context, dataset=''):
 
 ### MAIN
 
-if __name__ == '__main__':
+def main():
     # get user options
     global _opts
     _opts, args = get_option_parser().parse_args()
@@ -321,3 +319,6 @@ if __name__ == '__main__':
         _handle_sequential_dumps(previous_snaps, current_snapname, individuals=ids)
     _done()
 
+
+if __name__ == '__main__':
+    main()
